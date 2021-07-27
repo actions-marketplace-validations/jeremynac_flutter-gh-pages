@@ -41,7 +41,7 @@ runs:
     - run: git config user.email github-actions@github.com
       shell: bash
       working-directory: ${{inputs.workingDir}}
-    - run: sed -i 's/t/testsomthing/g' web/index.html
+    - run: sed -e 's/<base href="\/">/<base href="\/checkin-frontend\/">/' web/index.html
       shell: bash
       working-directory: ${{inputs.workingDir}}
     - run: git --work-tree build/web add --all
